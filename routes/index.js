@@ -15,3 +15,5 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9bf16c912ddec096&redirect_uri=https%3A%2F%2Fwww.frombottomto.top/login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
