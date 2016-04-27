@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var appid = 'wx9bf16c912ddec096';
-    var redirect_uri = "www.frombottomto.top/login";
+    var redirect_uri = "https%3A%2F%2Fwww.frombottomto.top/login";
     var scope = 'snsapi_userinfo';//两种方式
     var state = 'STATE';//非必须
 
