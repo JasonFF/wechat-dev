@@ -13,16 +13,27 @@
     <button id="btn">下一步</button>
     <script>
         $(function(){
+            var appid = <%= appid %>;
+            var secret = <%= secret %>;
+            var url = <%= url %>;
+            var code = <%= code %>;
             $('#btn').on('click',function(){
-                window.location='<%= url%>';
+                $.ajax({
+                    type:'POST',
+                    url: url,
+                    data: {
+                        appid: appid,
+                        secret: secret,
+                        code: code,
+                        grant_type: 'authorization_code'
+                    }
+                    success: function(result){
+                        console.log(result)
+                    }
+                })
+                // window.location='<%= url%>';
             })
-            // $.ajax({
-            //     type:'GET',
-            //     url: '<%= url%>',
-            //     success: function(result){
-            //         console.log(result)
-            //     }
-            // })
+            
         })
     </script>
 </body>
