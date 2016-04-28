@@ -22,9 +22,9 @@
                     type:'POST',
                     url: url,
                     data: {
-                        appid: appid,
-                        secret: ''+secret,
-                        code: code,
+                        appid: appid.toString(),
+                        secret: secret.toString(),
+                        code: code.toString(),
                         grant_type: 'authorization_code'
                     }
                     success: function(result){
