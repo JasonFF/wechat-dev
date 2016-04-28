@@ -19,14 +19,9 @@
             var code = '<%= code %>';
             $('#btn').on('click',function(){
                 $.ajax({
-                    type:'POST',
+                    type:'GET',
                     url: url,
-                    data: {
-                        appid: appid.toString(),
-                        secret: secret.toString(),
-                        code: code.toString(),
-                        grant_type: 'authorization_code'
-                    },
+                    dataType: 'JSONP',
                     success: function(result){
                         console.log(result)
                     }
