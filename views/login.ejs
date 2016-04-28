@@ -10,17 +10,20 @@
     <h1><%= appid %></h1>
     <h1><%= url %></h1>
     <h1><%= secret %></h1>
+    <button id="btn">下一步</button>
     <script>
-    $(function(){
-        window.location='<%= url%>';
-        // $.ajax({
-        //     type:'GET',
-        //     url: '<%= url%>',
-        //     success: function(result){
-        //         console.log(result)
-        //     }
-        // })
-    })
+        $(function(){
+            $('#btn').on('click',function(){
+                window.location='<%= url%>';
+            })
+            // $.ajax({
+            //     type:'GET',
+            //     url: '<%= url%>',
+            //     success: function(result){
+            //         console.log(result)
+            //     }
+            // })
+        })
     </script>
 </body>
 </html>
