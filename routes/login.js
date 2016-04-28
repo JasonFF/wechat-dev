@@ -9,12 +9,22 @@ router.get('/', function(req, res, next) {
     var url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+appid+'&secret=6841a50bd9b6e99c77d0e052e5e5eb2a&code='+code+'&grant_type=authorization_code';
 
     //获取code后，请求以下链接获取access_token：  https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code 
+
+
     fetch(url).then(function(res){
+        console.log(1)
+        return res.json()
+    }).then(function(json){
+        console.log(2)
+        console.log(json);
+    })
+
+    /*fetch(url).then(function(res){
         return res.json().then(function(json){
             console.log(json)
             res.render('login',{appid: appid,code: code,secret:secret,url:url,json:json})
         })
-    });
+    });*/
     //res.send('***appid***: '+appid+'\n ***code***: '+code+'\n ***secret***: '+secret+'\n ***url***: '+url)
     //res.render('login',{appid: appid,code: code,secret:secret,url:url})
     // res.redirect(url);
