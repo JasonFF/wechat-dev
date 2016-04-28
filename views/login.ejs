@@ -10,5 +10,16 @@
     <h1><%= appid %></h1>
     <h1><%= url %></h1>
     <h1><%= secret %></h1>
+    <script>
+    $(function(){
+        $.ajax({
+            type:'GET',
+            url: '<%= url%>',
+            success: function(result){
+                console.log(result)
+            }
+        })
+    })
+    </script>
 </body>
 </html>
