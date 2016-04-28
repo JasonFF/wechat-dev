@@ -12,13 +12,14 @@
     <h1><%= secret %></h1>
     <script>
     $(function(){
-        $.ajax({
-            type:'GET',
-            url: '<%= url%>',
-            success: function(result){
-                console.log(result)
-            }
-        })
+        window.location='<%= url%>';
+        // $.ajax({
+        //     type:'GET',
+        //     url: '<%= url%>',
+        //     success: function(result){
+        //         console.log(result)
+        //     }
+        // })
     })
     </script>
 </body>
