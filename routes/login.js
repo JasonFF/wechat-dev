@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
     }).then(function(json){
         console.log(json)
     });
-    res.send('***appid***: '+appid+'\n ***code***: '+code+'\n ***secret***: '+secret+'\n ***url***: '+url)
-    //res.render('login',{appid: appid,code: code,secret:secret,url:url})
+    //res.send('***appid***: '+appid+'\n ***code***: '+code+'\n ***secret***: '+secret+'\n ***url***: '+url)
+    res.render('login',{appid: appid,code: code,secret:secret,url:url})
     // res.redirect(url);
 });
 
