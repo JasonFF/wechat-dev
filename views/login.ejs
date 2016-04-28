@@ -13,10 +13,10 @@
     <button id="btn">下一步</button>
     <script>
         $(function(){
-            var appid = <%= appid %>;
-            var secret = <%= secret %>;
+            var appid = '<%= appid %>';
+            var secret = '<%= secret %>';
             var url = <%= url %>;
-            var code = <%= code %>;
+            var code = '<%= code %>';
             $('#btn').on('click',function(){
                 $.ajax({
                     type:'POST',
