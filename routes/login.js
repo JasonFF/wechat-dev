@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
     }).then(function(json){
         console.log(2)
         console.log(json);
+        res.send(json)
     })
 
     /*fetch(url).then(function(res){
