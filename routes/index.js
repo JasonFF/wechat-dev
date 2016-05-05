@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var fetch = require('node-fetch');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,8 +11,11 @@ router.get('/', function(req, res, next) {
 
 
     var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
+    fetch('dev.91souban.com/user_info').then(function(res){
+        console.log(res.json())
+    })
 
-    res.redirect(url);
+    //res.redirect(url);
 });
 
 module.exports = router;

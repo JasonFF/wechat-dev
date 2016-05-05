@@ -12,23 +12,20 @@ router.get('/', function(req, res, next) {
     //获取json后get: https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN 
 
 
-    fetch('dev.91souban.com/user_info').then(function(res){
-        console.log(res.json())
-    })
 
-    // fetch(url).then(function(res){
-    //     console.log(1)
-    //     return res.json()
-    // }).then(function(json){
-    //     var accesstoken = json.access_token;
-    //     var openid = json.openid;
-    //     var tokenurl = 'https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN ';
-    //     return fetch(tokenurl).then(function(res){
-    //         return res.json()
-    //     })
-    // }).then(function(json){
-    //     res.send(json)
-    // })
+    fetch(url).then(function(res){
+        console.log(1)
+        return res.json()
+    }).then(function(json){
+        var accesstoken = json.access_token;
+        var openid = json.openid;
+        var tokenurl = 'https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN ';
+        return fetch(tokenurl).then(function(res){
+            return res.json()
+        })
+    }).then(function(json){
+        res.send(json)
+    })
 
     /*fetch(url).then(function(res){
         return res.json().then(function(json){
