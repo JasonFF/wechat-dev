@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
         console.log(json)
         res.send(json)
     })
-
+    res.send('hello')
     //res.redirect(url);
 });
 
