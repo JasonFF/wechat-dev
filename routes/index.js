@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
         return res.json()
     }).then(function(json){
         console.log(json)
+        res.send(json)
     })
 
     //res.redirect(url);
