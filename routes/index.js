@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
     // var scope = 'snsapi_userinfo';//两种方式
     // var state = 'STATE';//非必须
 
-
+    console.log(1)
     // var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
-    fetch('dev.91souban.com/user_info').then(function(res){
+    fetch('http://dev.91souban.com/user_info').then(function(res){
         console.log(res.json())
     })
 
