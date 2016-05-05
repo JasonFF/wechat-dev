@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
     console.log(1)
     // var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
     fetch('http://dev.91souban.com/user_info').then(function(res){
-        console.log(res.json())
+        return res.json()
+    }).then(function(json){
+        console.log(json)
     })
 
     //res.redirect(url);
