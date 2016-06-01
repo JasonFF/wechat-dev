@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 			console.log(req.originalUrl)
 			var string1 = 'jsapi_ticket='+jsticket+'&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url=http://www.frombottomto.top'+req.originalUrl;
 			var signature = sha1(string1);
-			res.render(users,{signature:signature})
+			res.render('users',{signature:signature})
 			//res.send(shaticket)
 		})
 		
