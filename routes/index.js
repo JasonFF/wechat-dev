@@ -4,17 +4,15 @@ var fetch = require('node-fetch');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    // var appid = 'wx9bf16c912ddec096';
-    // var redirect_uri = "http%3A%2F%2Fwww.frombottomto.top/login";
-    // var scope = 'snsapi_userinfo';//两种方式
-    // var state = 'STATE';//非必须
+    var appid = 'wx9bf16c912ddec096';
+    var redirect_uri = "http%3A%2F%2Fwww.frombottomto.top/login";
+    var scope = 'snsapi_userinfo';//两种方式
+    var state = 'STATE';//非必须
 
-    console.log(1)
-    // var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
-    fetch('http://dev.91souban.com/user_info').then(function(res){
+    var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
+    fetch(url).then(function(res){
         return res.json()
     }).then(function(json){
-        console.log(json)
         res.send(json)
     })
     res.send('hello')

@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 
 
     fetch(url).then(function(res){
-        console.log(1)
         return res.json()
     }).then(function(json){
         var accesstoken = json.access_token;
