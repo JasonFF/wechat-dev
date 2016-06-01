@@ -11,21 +11,20 @@ router.get('/', function(req, res, next) {
 		return res.json()
 	}).then(function(json){
 		res.send(json);
-		access_token = json.access_token
+		access_token = json.access_token;
+		var ticketurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+access_token+'&type=jsapi'
+		//https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi
+		var jsticket;
+		fetch(ticketurl).then(function(res){
+			return res.json()
+		}).then(function(json){
+			res.send(json);
+			jsticket = json.ticket
+		})
+		var string1 = 'jsapi_ticket='+jsticket+'&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url='+req.url;
+		res.send(string1)
 	})
 	//https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
-	var ticketurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+access_token+'&type=jsapi'
-	//https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi
-	var jsticket;
-	fetch(ticketurl).then(function(res){
-		return res.json()
-	}).then(function(json){
-		res.send(json);
-		jsticket = json.ticket
-	})
-	var string1 = 'jsapi_ticket='+jsticket+'&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url='+req.url;
-	res.send(string1)
-  	res.send('respond with a resource');
 });
 
 module.exports = router;
