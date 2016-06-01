@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>微信js测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -19,7 +20,7 @@
 		    signature: '<%= signature %>',// 必填，签名，见附录1
 		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 		});
-		document.getElementById('sharepyq').onClick = function(){
+		document.getElementById('sharepyq').addEventListener('click',function(){
 			wx.onMenuShareTimeline({
 			    title: 'JasonFF', // 分享标题
 			    link: 'www.google.com', // 分享链接
@@ -31,8 +32,10 @@
 			        // 用户取消分享后执行的回调函数
 			    }
 			});
-		}
-		document.getElementById('sharehy').onClick = function(){
+		}) 
+
+		
+		document.getElementById('sharehy').addEventListener('click',function(){
 			wx.onMenuShareAppMessage({
 			    title: 'JasonFF', // 分享标题
 			    desc: 'JasonFF的主页', // 分享描述
@@ -47,7 +50,7 @@
 			        // 用户取消分享后执行的回调函数
 			    }
 			});
-		}
+		}) 
 		
     </script>
   </body>
