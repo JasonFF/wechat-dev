@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 			return res.json()
 		}).then(function(json){
 			jsticket = json.ticket;
+			console.log(req.originalUrl)
 			var string1 = 'jsapi_ticket='+jsticket+'&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url=http://www.frombottomto.top'+req.originalUrl;
 			res.send(string1)
 		})
