@@ -8,8 +8,7 @@
   <body>
     <h1>你好</h1>
     <p>Welcome to 微信</p>
-    <button id='sharepyq'>分享到朋友圈</button>
-	<button id='sharehy'>分享给好友</button>
+    <img src="/image/js.png" alt="">
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
     	wx.config({
@@ -20,7 +19,7 @@
 		    signature: '<%= signature %>',// 必填，签名，见附录1
 		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 		});
-		document.getElementById('sharepyq').addEventListener('click',function(){
+		wx.ready(function(){
 			wx.onMenuShareTimeline({
 			    title: 'JasonFF', // 分享标题
 			    link: 'www.google.com', // 分享链接
@@ -32,10 +31,6 @@
 			        // 用户取消分享后执行的回调函数
 			    }
 			});
-		}) 
-
-		
-		document.getElementById('sharehy').addEventListener('click',function(){
 			wx.onMenuShareAppMessage({
 			    title: 'JasonFF', // 分享标题
 			    desc: 'JasonFF的主页', // 分享描述
@@ -50,7 +45,7 @@
 			        // 用户取消分享后执行的回调函数
 			    }
 			});
-		}) 
+		})
 		
     </script>
   </body>
