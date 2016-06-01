@@ -10,13 +10,13 @@ router.get('/', function(req, res, next) {
     var state = 'STATE';//非必须
 
     var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirect_uri+'&response_type=code&scope='+scope+'&state='+state+'#wechat_redirect';
-    fetch(url).then(function(res){
-        return res.json()
-    }).then(function(json){
-        res.send(json)
-    })
-    res.send('hello')
-    //res.redirect(url);
+    // fetch(url).then(function(res){
+    //     return res.json()
+    // }).then(function(json){
+    //     res.send(json)
+    // })
+    //res.send('hello')
+    res.redirect(url);
 });
 
 module.exports = router;
