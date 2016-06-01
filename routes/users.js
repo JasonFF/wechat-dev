@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
+var sha1 = require('sha1');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 	var appid = 'wx9bf16c912ddec096';
@@ -20,7 +21,8 @@ router.get('/', function(req, res, next) {
 			jsticket = json.ticket;
 			console.log(req.originalUrl)
 			var string1 = 'jsapi_ticket='+jsticket+'&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url=http://www.frombottomto.top'+req.originalUrl;
-			res.send(string1)
+			var shaticket = sha1(string1)
+			res.send(shaticket)
 		})
 		
 	})
